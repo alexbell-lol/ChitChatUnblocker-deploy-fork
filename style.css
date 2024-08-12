@@ -80,7 +80,7 @@ body {
   box-shadow: 0 35px 70px rgba(0, 0, 0, 0.6);
 }
 
-/* 1. Grid Layout for Enhanced Flexibility */
+/* Grid Layout for Enhanced Flexibility */
 .container-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -88,7 +88,7 @@ body {
   width: 100%;
 }
 
-/* 2. Header Styles */
+/* Header Styles */
 .header {
   font-size: clamp(2rem, 4vw, 48px);
   font-weight: 700;
@@ -104,20 +104,21 @@ body {
   color: #ff85d1;
 }
 
-/* 3. Animated Icon Styles */
+/* Animated Icon Styles */
 .icon {
   height: 50px;
   width: 50px;
-  transition: transform 300ms ease, filter 300ms ease;
+  transition: transform 300ms ease, filter 300ms ease, opacity 300ms ease;
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 }
 
 .icon:hover {
   transform: scale(1.2) rotate(360deg);
   filter: drop-shadow(0 0 20px #DA70D6);
+  opacity: 0.8;
 }
 
-/* 4. Description Styles */
+/* Description Styles */
 .description {
   font-size: 1rem;
   color: #d1d1d1;
@@ -132,7 +133,7 @@ body {
   transform: scale(1.05);
 }
 
-/* 5. Input Styles */
+/* Input Styles */
 .input {
   width: 100%;
   max-width: 450px;
@@ -144,7 +145,7 @@ body {
   color: #DA70D6;
   outline: none;
   border-radius: 50px;
-  transition: border-color 200ms, box-shadow 200ms, background-color 200ms;
+  transition: border-color 200ms, box-shadow 200ms, background-color 200ms, transform 200ms;
 }
 
 .input::placeholder {
@@ -155,25 +156,23 @@ body {
   border-color: #ff85d1;
   box-shadow: 0 0 20px rgba(255, 133, 209, 0.7);
   background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.02);
 }
 
-.input:disabled {
-  color: #757575;
-}
-
-/* 6. Custom Logo Styles */
+/* Custom Logo Styles */
 .logo {
   height: 60px;
   width: 60px;
-  transition: transform 300ms, filter 300ms;
+  transition: transform 300ms, filter 300ms, opacity 300ms;
 }
 
 .logo:hover {
   transform: rotate(720deg) scale(1.1);
   filter: drop-shadow(0 0 40px #685dff);
+  opacity: 0.9;
 }
 
-/* 7. Footer Styles */
+/* Footer Styles */
 .footer {
   display: flex;
   justify-content: space-between;
@@ -186,24 +185,14 @@ body {
   bottom: 0;
   color: #DA70D6;
   backdrop-filter: blur(10px);
-  transition: background-color 300ms ease, color 300ms ease;
+  transition: background-color 300ms ease, color 300ms ease, transform 300ms ease;
 }
 
-.footer a,
-.footer a:visited {
-  color: #DA70D6;
-  font-size: 16px;
-  text-decoration: none;
-  text-underline-offset: 3px;
-  transition: color 200ms, text-decoration 200ms;
+.footer:hover {
+  transform: translateY(-5px);
 }
 
-.footer a:hover {
-  text-decoration: underline;
-  color: #ff85d1;
-}
-
-/* 8. Navbar Styles */
+/* Navbar Styles */
 .navbar {
   position: fixed;
   top: 0;
@@ -214,7 +203,7 @@ body {
   z-index: 1000;
   padding: 12px 0;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
-  transition: background-color 300ms ease, box-shadow 300ms ease;
+  transition: background-color 300ms ease, box-shadow 300ms ease, transform 300ms ease;
 }
 
 .navbar a {
@@ -224,24 +213,26 @@ body {
   text-align: center;
   padding: 14px 20px;
   text-decoration: none;
-  transition: background-color 300ms, color 300ms, transform 200ms;
+  transition: background-color 300ms, color 300ms, transform 200ms, text-shadow 300ms;
 }
 
 .navbar a:hover {
   background-color: #DA70D6;
   color: black;
   transform: scale(1.1);
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-/* 9. Sticky Navbar on Scroll */
+/* Sticky Navbar on Scroll */
 .navbar.sticky {
   position: sticky;
   top: 0;
   background-color: rgba(0, 0, 0, 0.95);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
+  transform: translateY(0);
 }
 
-/* 10. Button Styles */
+/* Button Styles */
 .button {
   background-color: rgba(0, 0, 0, 0.7);
   border: none;
@@ -253,7 +244,7 @@ body {
   margin: 6px 3px;
   cursor: pointer;
   border-radius: 50px;
-  transition: background-color 300ms, color 300ms, transform 200ms, box-shadow 200ms;
+  transition: background-color 300ms, color 300ms, transform 200ms, box-shadow 200ms, filter 200ms;
 }
 
 .button:hover {
@@ -261,19 +252,21 @@ body {
   color: black;
   transform: scale(1.15);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  filter: brightness(1.1);
 }
 
 .button:active {
   transform: scale(0.98);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  filter: brightness(0.9);
 }
 
-/* 11. Smooth Scroll */
+/* Smooth Scroll */
 html {
   scroll-behavior: smooth;
 }
 
-/* 12. Parallax Effect for Background */
+/* Parallax Effect for Background */
 body::before {
   content: "";
   position: fixed;
@@ -282,80 +275,259 @@ body::before {
   height: 110%;
   width: 110%;
   background-image: inherit;
-  background-size: inherit;
-  background-attachment: inherit;
-  z-index: -1;
-  transform: translateZ(-1px) scale(2);
-  filter: blur(2px);
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -2;
+  transform: translateZ(-2px) scale(2.5);
+  filter: blur(4px);
 }
 
-/* 13. Back-to-Top Button */
-#back-to-top {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  display: none;
+/* Gradient Border on Hover */
+.container:hover {
+  border: 3px solid rgba(255, 105, 180, 0.7);
+}
+
+/* Animated Fade-in for Footer and Navbar */
+.navbar, .footer {
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+}
+
+.navbar.scrolled, .footer.scrolled {
+  opacity: 1;
+}
+
+/* Floating Elements */
+.float {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
   background-color: #DA70D6;
   color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 50px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 300ms, transform 300ms;
-  z-index: 1000;
+  border-radius: 50%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  animation: float 6s ease-in-out infinite;
 }
 
-#back-to-top:hover {
-  background-color: #ff85d1;
-  transform: translateY(-10px);
-}
-
-/* Show Back-to-Top Button */
-body.scroll-active #back-to-top {
-  display: block;
-}
-
-/* 14. Smooth Back-to-Top Scroll */
-#back-to-top:focus {
-  outline: none;
-  animation: bounce 1s infinite;
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+@keyframes float {
+  0%, 100% {
     transform: translateY(0);
   }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
+  50% {
+    transform: translateY(-20px);
   }
 }
 
-/* 15. Responsive Design */
-@media (max-width: 768px) {
-  .header {
-    font-size: clamp(1.5rem, 5vw, 36px);
+/* Custom Font Loading */
+@font-face {
+  font-family: 'CustomFont';
+  src: url('path/to/custom-font.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'CustomFont', 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+/* Interactive Header Text */
+.header span {
+  display: inline-block;
+  position: relative;
+  transition: transform 300ms ease, color 300ms ease;
+}
+
+.header span:hover {
+  color: #ff85d1;
+  transform: rotate(5deg) scale(1.1);
+}
+
+/* Animated Gradient Background */
+@keyframes gradientBackground {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+body {
+  background: linear-gradient(45deg, #DA70D6, #ff85d1);
+  background-size: 400% 400%;
+  animation: gradientBackground 15s ease infinite;
+}
+
+/* Fullscreen Modal Effect */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  width: 80%;
+  max-width: 600px;
+  transition: transform 300ms ease;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  transform: scale(0.9);
+  opacity: 0;
+  animation: modalShow 300ms forwards;
+}
+
+@keyframes modalShow {
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
-  
-  .navbar a {
-    padding: 12px 16px;
-    font-size: 14px;
+}
+
+/* Tooltip Effect */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #DA70D6;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above the tooltip element */
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Custom Checkbox and Radio Buttons */
+input[type="checkbox"], input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #DA70D6;
+  border-radius: 4px;
+  background-color: #fff;
+  transition: background-color 300ms, border 300ms;
+}
+
+input[type="checkbox"]:checked, input[type="radio"]:checked {
+  background-color: #DA70D6;
+  border-color: #DA70D6;
+}
+
+input[type="checkbox"]:checked::after, input[type="radio"]:checked::after {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: relative;
+  top: 2px;
+  left: 2px;
+}
+
+/* Animation on Page Load */
+@keyframes pageLoad {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .footer {
-    flex-direction: column;
-    align-items: flex-start;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .footer div {
-    gap: 20px;
-  }
-  
-  .button {
-    padding: 12px 30px;
-    font-size: 16px;
-  }
+}
+
+body {
+  animation: pageLoad 1s ease-out;
+}
+
+/* Vibrant Hover Effects */
+.vibrant:hover {
+  color: #ff85d1;
+  text-shadow: 0 0 20px rgba(255, 105, 180, 0.7);
+  transition: color 300ms, text-shadow 300ms;
+}
+
+/* Dynamic Border Effects */
+.container:hover {
+  border: 2px solid #ff85d1;
+  transform: scale(1.02);
+}
+
+/* Shadow and Glitch Effect on Hover */
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #DA70D6;
+  background: linear-gradient(45deg, #DA70D6, #ff85d1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: glitch 1s infinite;
+  opacity: 0.8;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  33% { transform: translate(-2px, 2px); }
+  66% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.glitch:hover::before {
+  opacity: 1;
+}
+
+/* Loading Spinner */
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #DA70D6;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
