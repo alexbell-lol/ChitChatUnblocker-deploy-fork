@@ -4,66 +4,76 @@ body {
   color: #f4f4f4;
   margin: 0;
   padding: 0;
-  height: 100vh;
-  width: 100vw;
-  background-image: url('https://github.com/VividElitezz/ChitChatUnblocker/blob/main/bg.jpg?raw=true');
+  min-height: 100vh;
+  min-width: 100vw;
+  background-image: url('https://cdn.prod.website-files.com/5a9ee6416e90d20001b20038/64f5e02cb5805eb6fd8e503c_Rectangle%20(98).svg');
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Container Styles */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  backdrop-filter: blur(15px);
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 30px;
-  border-radius: 25px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  gap: 24px;
+  backdrop-filter: blur(20px);
+  background-color: rgba(30, 30, 30, 0.8);
+  padding: 35px;
+  border-radius: 30px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
   text-align: center;
-  width: min(90%, 500px);
+  width: min(85%, 480px);
+  transition: transform 300ms ease;
 }
 
+.container:hover {
+  transform: translateY(-10px);
+}
+
+/* Header Styles */
 .header {
-  font-size: 48px;
-  font-weight: 600;
+  font-size: 50px;
+  font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 14px;
-  color: #FFFFFF;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  gap: 16px;
+  color: #DA70D6;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
 }
 
+/* Icon Styles */
 .icon {
-  height: 48px;
-  width: 48px;
+  height: 50px;
+  width: 50px;
 }
 
+/* Description Styles */
 .description {
   font-size: 18px;
   color: #d1d1d1;
-  line-height: 1.6;
+  line-height: 1.8;
+  margin-bottom: 20px;
 }
 
+/* Input Styles */
 .input {
   width: 100%;
   max-width: 450px;
-  background-color: transparent;
-  border: 2px solid rgb(100, 100, 100);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid #DA70D6;
   font-size: 16px;
-  padding: 14px;
+  padding: 15px;
   text-align: center;
-  color: #FFFFFF;
+  color: #DA70D6;
   outline: none;
   border-radius: 50px;
-  transition: border-color 200ms, box-shadow 200ms;
+  transition: border-color 200ms, box-shadow 200ms, background-color 200ms;
 }
 
 .input::placeholder {
@@ -72,25 +82,27 @@ body {
 
 .input:focus {
   border-color: #685dff;
-  box-shadow: 0 0 10px rgba(104, 93, 255, 0.6);
+  box-shadow: 0 0 15px rgba(104, 93, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .input:disabled {
   color: #757575;
 }
 
+/* Logo Styles */
 .logo {
   height: 60px;
   width: 60px;
-  will-change: filter;
-  transition: filter 300ms;
+  transition: transform 300ms, filter 300ms;
 }
 
 .logo:hover {
+  transform: rotate(360deg);
   filter: drop-shadow(0 0 30px #685dff);
 }
 
-/* Footer */
+/* Footer Styles */
 .footer {
   display: flex;
   justify-content: space-between;
@@ -98,49 +110,50 @@ body {
   padding: 20px;
   width: 100%;
   box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
   bottom: 0;
-  color: #FFFFFF;
+  color: #DA70D6;
   backdrop-filter: blur(10px);
 }
 
 .footer a,
 .footer a:visited {
-  color: #FFFFFF;
+  color: #DA70D6;
   font-size: 16px;
   text-decoration: none;
-  text-underline-offset: 2.5px;
+  text-underline-offset: 3px;
   transition: color 200ms, text-decoration 200ms;
 }
 
 .footer a:hover {
   text-decoration: underline;
-  color: #ffd700;
+  color: #ff85d1;
 }
 
 .footer div {
   display: flex;
-  gap: 30px;
+  gap: 32px;
 }
 
-/* Navbar */
+/* Navbar Styles */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
-  color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(15px);
+  color: #DA70D6;
   z-index: 1000;
-  padding: 10px 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  padding: 12px 0;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+  transition: background-color 300ms;
 }
 
 .navbar a {
   float: left;
   display: block;
-  color: #FFFFFF;
+  color: #DA70D6;
   text-align: center;
   padding: 14px 20px;
   text-decoration: none;
@@ -148,7 +161,7 @@ body {
 }
 
 .navbar a:hover {
-  background-color: #ffd700;
+  background-color: #DA70D6;
   color: black;
 }
 
@@ -156,19 +169,23 @@ body {
 .button {
   background-color: rgba(0, 0, 0, 0.7);
   border: none;
-  color: #FFFFFF;
-  padding: 16px 36px;
+  color: #DA70D6;
+  padding: 18px 40px;
   text-align: center;
   text-decoration: none;
   font-size: 18px;
-  margin: 5px 3px;
+  margin: 6px 3px;
   cursor: pointer;
   border-radius: 50px;
   transition: background-color 300ms, color 300ms, transform 200ms;
 }
 
 .button:hover {
-  background-color: #ffd700;
+  background-color: #ffffff;
   color: black;
-  transform: scale(1.05);
+  transform: scale(1.1);
+}
+
+.button:active {
+  transform: scale(0.98);
 }
