@@ -1,20 +1,16 @@
 /* Global Styles */
 body {
-  background-color: #1e1e1e;
-  color: #f4f4f4;
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100vw;
-  background-image: url('https://cdn.prod.website-files.com/5a9ee6416e90d20001b20038/64f5e02cb5805eb6fd8e503c_Rectangle%20(98).svg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background: url('https://cdn.prod.website-files.com/5a9ee6416e90d20001b20038/64f5e02cb5805eb6fd8e503c_Rectangle%20(98).svg') no-repeat center center/cover;
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
-  overflow: hidden;
+  color: #f4f4f4;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 /* Container */
@@ -23,25 +19,24 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  backdrop-filter: blur(15px);
-  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.7);
   padding: 30px;
-  border-radius: 25px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   text-align: center;
   width: min(90%, 500px);
-  position: relative;
 }
 
 /* Header */
 .header {
-  font-size: 48px;
+  font-size: 2.5rem;
   font-weight: 600;
+  color: #DA70D6;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
-  gap: 14px;
-  color: #DA70D6;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  gap: 15px;
 }
 
 /* Icon */
@@ -52,7 +47,7 @@ body {
 
 /* Description */
 .description {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #d1d1d1;
   line-height: 1.6;
 }
@@ -61,15 +56,14 @@ body {
 .input {
   width: 100%;
   max-width: 450px;
-  background-color: transparent;
-  border: 2px solid rgb(100, 100, 100);
-  font-size: 16px;
-  padding: 14px;
+  background: transparent;
+  border: 2px solid #555;
+  font-size: 1rem;
+  padding: 12px;
   text-align: center;
   color: #DA70D6;
-  outline: none;
-  border-radius: 50px;
-  transition: border-color 200ms, box-shadow 200ms;
+  border-radius: 25px;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .input::placeholder {
@@ -77,24 +71,19 @@ body {
 }
 
 .input:focus {
-  border-color: #685dff;
-  box-shadow: 0 0 10px rgba(104, 93, 255, 0.6);
-}
-
-.input:disabled {
-  color: #757575;
+  border-color: #DA70D6;
+  box-shadow: 0 0 8px rgba(218, 112, 214, 0.5);
 }
 
 /* Logo */
 .logo {
   height: 60px;
   width: 60px;
-  will-change: filter;
-  transition: filter 300ms;
+  transition: filter 0.3s;
 }
 
 .logo:hover {
-  filter: drop-shadow(0 0 30px #685dff);
+  filter: drop-shadow(0 0 15px #DA70D6);
 }
 
 /* Footer */
@@ -102,33 +91,23 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 15px;
   width: 100%;
-  box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   position: fixed;
   bottom: 0;
   color: #DA70D6;
-  backdrop-filter: blur(10px);
 }
 
-.footer a,
-.footer a:visited {
+.footer a {
   color: #DA70D6;
-  font-size: 16px;
+  font-size: 1rem;
   text-decoration: none;
-  text-underline-offset: 2.5px;
-  transition: color 200ms, text-decoration 200ms;
+  transition: color 0.3s, text-decoration 0.3s;
 }
 
 .footer a:hover {
   text-decoration: underline;
-  color: #DA70D6;
-}
-
-.footer div {
-  display: flex;
-  gap: 30px;
 }
 
 /* Navbar */
@@ -136,913 +115,67 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px 0;
   color: #DA70D6;
   z-index: 1000;
-  padding: 10px 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .navbar a {
-  float: left;
   display: block;
   color: #DA70D6;
-  text-align: center;
-  padding: 14px 20px;
+  padding: 12px 20px;
   text-decoration: none;
-  transition: background-color 300ms, color 300ms;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .navbar a:hover {
   background-color: #DA70D6;
-  color: black;
+  color: #000;
 }
 
-/* Button Styles */
+/* Button */
 .button {
-  background-color: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7);
   border: none;
   color: #DA70D6;
-  padding: 16px 36px;
+  padding: 14px 30px;
   text-align: center;
-  text-decoration: none;
-  font-size: 18px;
-  margin: 5px 3px;
+  font-size: 1rem;
   cursor: pointer;
   border-radius: 50px;
-  transition: background-color 300ms, color 300ms, transform 200ms;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
 }
 
 .button:hover {
-  background-color: #ffffff;
-  color: black;
+  background: #DA70D6;
+  color: #000;
   transform: scale(1.05);
 }
 
-/* New Features */
-
-/* 1. Gradient Background */
-.gradient-background {
-  background: linear-gradient(135deg, #DA70D6, #ff85d1);
-  background-size: 200% 200%;
-  animation: gradient 5s ease infinite;
-}
-@keyframes gradient {
-  0% { background-position: 0% 0%; }
-  50% { background-position: 100% 100%; }
-  100% { background-position: 0% 0%; }
-}
-
-/* 2. Card Hover Effect */
-.card-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card-hover:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-}
-
-/* 3. Custom Scrollbars */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #DA70D6;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-track {
-  background: #1e1e1e;
-}
-
-/* 4. Tooltips with Animations */
-.tooltip {
+/* Custom Features */
+.custom-background {
   position: relative;
-  display: inline-block;
+  background: url('https://example.com/custom-background.jpg') no-repeat center center/cover;
 }
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 5px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -60px;
-  opacity: 0;
-  transition: opacity 0.3s, transform 0.3s;
-  transform: translateY(10px);
-}
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* 5. Responsive Flexbox Layout */
-.responsive-flex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-.responsive-flex > div {
-  flex: 1 1 calc(33% - 20px);
-}
-@media (max-width: 768px) {
-  .responsive-flex > div {
-    flex: 1 1 calc(50% - 20px);
-  }
-}
-
-/* 6. Advanced Button Styles */
-.button-ghost {
-  background: transparent;
-  border: 2px solid #DA70D6;
-  color: #DA70D6;
-  transition: background-color 0.4s, color 0.4s;
-}
-.button-ghost:hover {
-  background-color: #DA70D6;
-  color: #fff;
-}
-
-/* 7. Hover Effects */
-.hover-fade {
-  transition: opacity 0.3s ease;
-}
-.hover-fade:hover {
-  opacity: 0.7;
-}
-
-/* 8. Advanced Typography */
-h1 {
-  font-family: 'Roboto', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* 9. Border Animations */
-.border-animate {
-  border: 2px solid transparent;
-  position: relative;
-}
-.border-animate::after {
+.custom-background::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border: 2px solid #DA70D6;
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-.border-animate:hover::after {
-  opacity: 1;
-}
-
-/* 10. Loading Progress Bar */
-.loading-bar {
-  position: relative;
-  width: 100%;
-  height: 10px;
-  background: #ddd;
-  border-radius: 5px;
-  overflow: hidden;
-}
-.loading-bar span {
-  display: block;
-  height: 100%;
-  width: 0;
-  background: #DA70D6;
-  transition: width 0.5s ease;
-}
-
-/* 11. Text Gradients */
-.text-gradient {
-  background: linear-gradient(45deg, #DA70D6, #ff85d1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* 12. Box Shadows */
-.box-shadow-advanced {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* 13. Smooth Scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* 14. Animated Backgrounds */
-.animated-background {
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 20%, rgba(0, 0, 0, 0.5) 50%);
-  animation: background-animation 10s linear infinite;
-}
-@keyframes background-animation {
-  0% { background-position: 0% 0%; }
-  50% { background-position: 100% 100%; }
-  100% { background-position: 0% 0%; }
-}
-
-/* 15. Animated SVGs */
-.svg-animation {
-  animation: svg-animate 2s infinite;
-}
-@keyframes svg-animate {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-/* 16. Shadow Effects */
-.shadow-effect {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-}
-
-/* 17. Parallax Scrolling */
-.parallax {
-  background-image: url('https://example.com/parallax.jpg');
-  height: 500px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* 18. Focus Rings */
-:focus {
-  outline: 2px solid #DA70D6;
-}
-
-/* 19. Input Focus Transition */
-.input-focus {
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-.input-focus:focus {
-  border-color: #DA70D6;
-  box-shadow: 0 0 5px rgba(104, 93, 255, 0.5);
-}
-
-/* 20. Keyframe Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-/* 21. Overlay Effects */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* 22. Responsive Media Queries */
-@media (max-width: 1200px) {
-  .responsive-lg {
-    font-size: 1.2em;
-  }
-}
-@media (max-width: 768px) {
-  .responsive-md {
-    font-size: 1em;
-  }
-}
-@media (max-width: 480px) {
-  .responsive-sm {
-    font-size: 0.8em;
-  }
-}
-
-/* 23. Button Loading State */
-.button-loading {
-  position: relative;
-}
-.button-loading::after {
-  content: 'Loading...';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-}
-
-/* 24. Fullscreen Modal */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-.modal-content {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 600px;
-  width: 100%;
-}
-
-/* 25. Smooth Hover Transitions */
-.smooth-hover {
-  transition: transform 0.3s, opacity 0.3s;
-}
-.smooth-hover:hover {
-  transform: scale(1.05);
-  opacity: 0.8;
-}
-
-/* 26. Full Width Elements */
-.full-width {
-  width: 100%;
-  max-width: none;
-}
-
-/* 27. Container for Centered Elements */
-.centered-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-/* 28. Custom Form Controls */
-.custom-checkbox {
-  position: relative;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-}
-.custom-checkbox input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.custom-checkbox .checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  background-color: #DA70D6;
-}
-.custom-checkbox input:checked ~ .checkmark {
-  background-color: #fff;
-}
-
-/* 29. Custom Radio Buttons */
-.custom-radio {
-  position: relative;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-}
-.custom-radio input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.custom-radio .radiomark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #DA70D6;
-}
-.custom-radio input:checked ~ .radiomark {
-  background-color: #fff;
-}
-
-/* 30. Interactive Charts */
-.chart {
-  width: 100%;
-  height: 300px;
-}
-
-/* 31. Collapsible Panels */
-.panel {
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  overflow: hidden;
-}
-.panel-header {
-  background: #f4f4f4;
-  padding: 10px;
-  cursor: pointer;
-}
-.panel-content {
-  display: none;
-  padding: 10px;
-}
-
-/* 32. High Contrast Mode */
-.high-contrast {
-  background-color: #000;
-  color: #fff;
-}
-
-/* 33. Lightbox Effect */
-.lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  display: none;
-  align-items: center;
-  justify-content: center;
-}
-.lightbox img {
-  max-width: 90%;
-  max-height: 80%;
-}
-
-/* 34. Animated Progress Bar */
-.animated-progress {
-  height: 10px;
-  width: 0;
-  background: #DA70D6;
-  transition: width 0.5s;
-}
-
-/* 35. Text Shadows */
-.text-shadow {
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-/* 36. Parallax Effect */
-.parallax {
-  background: url('https://example.com/parallax.jpg') no-repeat fixed;
-  background-size: cover;
-  height: 500px;
-}
-
-/* 37. Box Shadows for Depth */
-.depth {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* 38. Animated Typing Effect */
-.typing-effect {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: .15em solid #DA70D6;
-  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-}
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: #DA70D6 }
-}
-
-/* 39. Custom Checkboxes */
-.custom-checkbox {
-  display: flex;
-  align-items: center;
-}
-.custom-checkbox input {
-  display: none;
-}
-.custom-checkbox label {
-  position: relative;
-  padding-left: 25px;
-  cursor: pointer;
-}
-.custom-checkbox label::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #DA70D6;
-  background: #fff;
-}
-.custom-checkbox input:checked + label::before {
-  background: #DA70D6;
-}
-
-/* 40. Custom Radio Buttons */
-.custom-radio {
-  display: flex;
-  align-items: center;
-}
-.custom-radio input {
-  display: none;
-}
-.custom-radio label {
-  position: relative;
-  padding-left: 25px;
-  cursor: pointer;
-}
-.custom-radio label::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #DA70D6;
-  border-radius: 50%;
-  background: #fff;
-}
-.custom-radio input:checked + label::before {
-  background: #DA70D6;
-}
-
-/* 41. CSS Grid Layout */
-.grid-layout {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-/* 42. Fancy Underline Effect */
-.fancy-underline {
-  position: relative;
-  display: inline-block;
-}
-.fancy-underline::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 0;
-  background-color: #DA70D6;
-  transition: width 0.3s;
-}
-.fancy-underline:hover::after {
-  width: 100%;
-}
-
-/* 43. Animated Icons */
-.animated-icon {
-  animation: spin 2s infinite linear;
-}
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* 44. Fixed Navigation */
-.fixed-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 10px 0;
-  z-index: 1000;
-}
-
-/* 45. Scroll Animations */
-.scroll-animate {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.scroll-animate.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* 46. Centered Content */
-.center-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-/* 47. Responsive Typography */
-.responsive-text {
-  font-size: calc(1em + 1vw);
-}
-
-/* 48. Flexible Containers */
-.flexible-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.7);
-}
-
-/* 49. Glowing Text */
-.glow-text {
-  color: #DA70D6;
-  text-shadow: 0 0 10px #DA70D6, 0 0 20px #DA70D6, 0 0 30px #DA70D6, 0 0 40px #DA70D6;
-}
-
-/* 50. Background Image with Overlay */
-.background-overlay {
-  position: relative;
-  background: url('https://example.com/background.jpg') no-repeat center center/cover;
-}
-.background-overlay::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-/* 51. Staggered Animations */
-.staggered-animation {
-  animation: stagger 1s ease-in-out;
-}
-@keyframes stagger {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* 52. Custom Dropdowns */
-.custom-dropdown {
-  position: relative;
-  display: inline-block;
-}
-.custom-dropdown select {
-  appearance: none;
-  background: #DA70D6;
-  color: #fff;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-}
-.custom-dropdown::after {
-  content: '▼';
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
-/* 53. Ripple Effect */
-.ripple {
-  position: relative;
-  overflow: hidden;
-}
-.ripple::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
   background: rgba(0, 0, 0, 0.3);
-  width: 100px;
-  height: 100px;
-  transform: scale(0);
-  animation: ripple-animation 0.6s linear;
 }
-@keyframes ripple-animation {
-  to {
-    transform: scale(4);
-    opacity: 0;
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    font-size: 2rem;
   }
-}
 
-/* 54. Custom Alerts */
-.custom-alert {
-  padding: 15px;
-  border-radius: 5px;
-  background: #ff6b6b;
-  color: #fff;
-  font-size: 16px;
-}
-.custom-alert.success {
-  background: #4caf50;
-}
-
-/* 55. Progress Ring */
-.progress-ring {
-  position: relative;
-  width: 100px;
-  height: 100px;
-}
-.progress-ring circle {
-  fill: none;
-  stroke-width: 10;
-}
-.progress-ring .circle-bg {
-  stroke: #ddd;
-}
-.progress-ring .circle {
-  stroke: #DA70D6;
-  stroke-dasharray: 314;
-  stroke-dashoffset: 0;
-  transition: stroke-dashoffset 0.35s;
-}
-
-/* 56. Sticky Elements */
-.sticky {
-  position: sticky;
-  top: 0;
-}
-
-/* 57. Custom Range Sliders */
-.range-slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 8px;
-  background: #ddd;
-  border-radius: 5px;
-}
-.range-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 16px;
-  height: 16px;
-  background: #DA70D6;
-  border-radius: 50%;
-}
-
-/* 58. Flip Card */
-.flip-card {
-  perspective: 1000px;
-}
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-.flip-card-back {
-  transform: rotateY(180deg);
-}
-
-/* 59. Animated List Items */
-.animated-list-item {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s, transform 0.6s;
-}
-.animated-list-item.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* 60. Gradient Borders */
-.gradient-border {
-  border: 2px solid;
-  border-image: linear-gradient(45deg, #DA70D6, #ff85d1);
-  border-image-slice: 1;
-}
-
-/* 61. Blurry Backgrounds */
-.blurry-background {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-}
-
-/* 62. Highlighted Text */
-.highlight-text {
-  background: #DA70D6;
-  color: #fff;
-  padding: 0 5px;
-  border-radius: 3px;
-}
-
-/* 63. Slide-In Animations */
-.slide-in {
-  opacity: 0;
-  transform: translateX(-100%);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.slide-in.in-view {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* 64. Box Shadows on Hover */
-.box-shadow-hover {
-  transition: box-shadow 0.3s ease;
-}
-.box-shadow-hover:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-/* 65. Background Color Transition */
-.background-transition {
-  transition: background-color 0.5s ease;
-}
-.background-transition:hover {
-  background-color: #DA70D6;
-}
-
-/* 66. Custom List Styles */
-.custom-list {
-  list-style: none;
-  padding: 0;
-}
-.custom-list li {
-  position: relative;
-  padding-left: 20px;
-}
-.custom-list li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: #DA70D6;
-}
-
-/* 67. Animated Background Effects */
-.animated-background {
-  animation: gradient-background 5s infinite alternate;
-}
-@keyframes gradient-background {
-  0% { background: linear-gradient(45deg, #DA70D6, #ff85d1); }
-  100% { background: linear-gradient(45deg, #ff85d1, #DA70D6); }
-}
-
-/* 68. Text Scaling */
-.text-scaling {
-  transition: font-size 0.3s;
-}
-.text-scaling:hover {
-  font-size: 1.2em;
-}
-
-/* 69. Custom Pagination */
-.pagination {
-  display: flex;
-  gap: 10px;
-}
-.pagination a {
-  padding: 10px;
-  background: #DA70D6;
-  color: #fff;
-  border-radius: 5px;
-  text-decoration: none;
-}
-.pagination a:hover {
-  background: #ff85d1;
-}
-
-/* 70. Blurred Borders */
-.blurred-border {
-  border: 2px solid;
-  border-image: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
-  border-image-slice: 1;
-}
-
-/* 71. Custom Scrollbars */
-.custom-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: #DA70D6 #ddd;
-}
-.custom-scrollbar::-webkit-scrollbar {
-  width: 8px;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #DA70D6;
-  border-radius: 10px;
-}
-.custom-scrollbar::-webkit-scrollbar-track {
-  background-color: #ddd;
+  .description {
+    font-size: 1rem;
+  }
 }
