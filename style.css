@@ -20,44 +20,50 @@ body {
   align-items: center;
   gap: 20px;
   backdrop-filter: blur(10px);
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
   text-align: center;
   width: min(90%, 500px);
   animation: fadeIn 1s ease-out;
+  border: 1px solid #DA70D6;
 }
 
 /* Header */
 .header {
   font-size: 2.5rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #DA70D6;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   gap: 15px;
   animation: slideIn 1s ease-out;
+  position: relative;
 }
 
 /* Icon */
 .icon {
-  height: 48px;
-  width: 48px;
-  transition: transform 0.3s;
+  height: 50px;
+  width: 50px;
+  transition: transform 0.3s, filter 0.3s;
 }
 
 .icon:hover {
   transform: rotate(360deg);
+  filter: brightness(1.2);
 }
 
 /* Description */
 .description {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   color: #d1d1d1;
   line-height: 1.6;
   animation: fadeIn 1.5s ease-out;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 /* Input */
@@ -70,7 +76,7 @@ body {
   padding: 12px;
   text-align: center;
   color: #DA70D6;
-  border-radius: 25px;
+  border-radius: 30px;
   transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
 }
 
@@ -80,20 +86,20 @@ body {
 
 .input:focus {
   border-color: #DA70D6;
-  box-shadow: 0 0 8px rgba(218, 112, 214, 0.5);
-  transform: scale(1.02);
+  box-shadow: 0 0 12px rgba(218, 112, 214, 0.6);
+  transform: scale(1.05);
 }
 
 /* Logo */
 .logo {
-  height: 60px;
-  width: 60px;
+  height: 70px;
+  width: 70px;
   transition: filter 0.3s, transform 0.3s;
 }
 
 .logo:hover {
-  filter: drop-shadow(0 0 15px #DA70D6);
-  transform: scale(1.1);
+  filter: drop-shadow(0 0 20px #DA70D6);
+  transform: scale(1.1) rotate(10deg);
 }
 
 /* Footer */
@@ -101,13 +107,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 20px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   position: fixed;
   bottom: 0;
   color: #DA70D6;
   animation: fadeIn 2s ease-out;
+  border-top: 1px solid #DA70D6;
 }
 
 .footer a {
@@ -131,7 +138,7 @@ body {
   padding: 10px 0;
   color: #DA70D6;
   z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .navbar a {
@@ -147,11 +154,12 @@ body {
   background-color: #DA70D6;
   color: black;
   transform: scale(1.1);
+  border-radius: 5px;
 }
 
 /* Button */
 .button {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   border: none;
   color: #DA70D6;
   padding: 14px 30px;
@@ -165,8 +173,8 @@ body {
 .button:hover {
   background: #DA70D6;
   color: #000;
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1) rotate(3deg);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Animations */
@@ -178,6 +186,76 @@ body {
 @keyframes slideIn {
   from { transform: translateY(-20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shadowPulse {
+  0% { box-shadow: 0 0 0 rgba(0, 0, 0, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); }
+  100% { box-shadow: 0 0 0 rgba(0, 0, 0, 0.2); }
+}
+
+/* Additional Effects */
+.container:hover {
+  animation: shadowPulse 1s infinite;
+}
+
+.header:hover {
+  animation: pulse 1.5s infinite;
+}
+
+.footer a {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(45deg, rgba(218, 112, 214, 0.3), rgba(218, 112, 214, 0.0));
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: transform 0.5s;
+  z-index: 0;
+}
+
+.footer a:hover::after {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.footer a {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar a {
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(45deg, rgba(218, 112, 214, 0.3), rgba(218, 112, 214, 0.0));
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: transform 0.5s;
+  z-index: 0;
+}
+
+.navbar a:hover::after {
+  transform: translate(-50%, -50%) rotate(0deg);
 }
 
 /* Responsive Design */
